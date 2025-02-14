@@ -56,14 +56,13 @@ The stub code generator for generating the adapter and proxy
 interfaces out of the D-Bus IDL XML description.
 
 %prep
-%setup
+%setup -q
 
 %build
 mkdir -p build
 cd build
 %cmake ../ \
 	-DCMAKE_INSTALL_DOCDIR=%{_docdir}/sdbus-c++ \
-	-DSDBUSCPP_BUILD_LIBSYSTEMD=ON \
 	-DSDBUSCPP_BUILD_CODEGEN=ON \
 	%{cmake_on_off apidocs SDBUSCPP_BUILD_DOCS} \
 	%{cmake_on_off apidocs SDBUSCPP_BUILD_DOXYGEN_DOCS} \
